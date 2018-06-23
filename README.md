@@ -4,17 +4,17 @@
 
 Namespace	Type	Member		Cyclomatic Complexity
 
-MineSweeperKataTestUnit	UnitTest1	UpdateSurroundingTiles() : void			      	1
-MineSweeperKataTestUnit	UnitTest1	Update1TileTwice() : void				            1
-MineSweeperKataTestUnit	UnitTest1	UnitTest1()					                      	1
-MineSweeperKataTestUnit	UnitTest1	Transform4DotsInTotalIntoZeroes() : void		1
-MineSweeperKataTestUnit	UnitTest1	Transform2SeparateDotsIntoZeroes() : void		1
-MineSweeperKataTestUnit	UnitTest1	Transform2InlineDotsIntoZeroes() : void			1
-MineSweeperKataTestUnit	UnitTest1	Transform1DotIntoZero() : void				      1
-MineSweeperKataTestUnit	UnitTest1	SaveFieldvalue() : void					            1
-MineSweeperKataTestUnit	UnitTest1	SaveFieldLines() : void				            	1
-MineSweeperKataTestUnit	UnitTest1	SaveFieldColumns() : void		            		1
-MineSweeperKataTestUnit	UnitTest1	readEntireTextBLockUntil0_0() : void		  	1
+|MineSweeperKataTestUnit	UnitTest1	UpdateSurroundingTiles() : void		|	      	1
+|MineSweeperKataTestUnit	UnitTest1	Update1TileTwice() : void				  |         1
+|MineSweeperKataTestUnit	UnitTest1	UnitTest1()					                      |	1
+|MineSweeperKataTestUnit	UnitTest1	Transform4DotsInTotalIntoZeroes() : void	|	1
+|MineSweeperKataTestUnit	UnitTest1	Transform2SeparateDotsIntoZeroes() : void	|	1
+|MineSweeperKataTestUnit	UnitTest1	Transform2InlineDotsIntoZeroes() : void	|		1
+|MineSweeperKataTestUnit	UnitTest1	Transform1DotIntoZero() : void	|			      1
+|MineSweeperKataTestUnit	UnitTest1	SaveFieldvalue() : void		|			            1
+|MineSweeperKataTestUnit	UnitTest1	SaveFieldLines() : void		|		            	1
+|MineSweeperKataTestUnit	UnitTest1	SaveFieldColumns() : void|	            		1
+|MineSweeperKataTestUnit	UnitTest1	readEntireTextBLockUntil0_0() : void|		  	1
 MineSweeperKataTestUnit	UnitTest1	ReadEntireTextBlock() : void				        1
 MineSweeperKataTestUnit	UnitTest1	OnlyTransformDotsIntoZeroes() : void		  	1
 MineSweeperKataTestUnit	UnitTest1	GenerateSingleMineOutput() : void		      	1

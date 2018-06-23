@@ -23,17 +23,27 @@ namespace MineSweeperKataLibrary
 
         public void TransformAllDotsIntoZeroes()
         {
-            for(int i = 0; i < Lines; i++)
+            for (int i = 0; i < Lines; i++)
             {
                 char[] chars = InputGrid[i].ToCharArray();
-                for (int j = 0; j < Columns; j++)
-                {
-                    if(chars[j] != '*')
-                        chars[j] = '0';
-                }
+                CharVerifier(chars);
                 OutputGrid[i] = new string(chars);
             }
-            
+
+        }
+
+        public void CharVerifier(char[] chars)
+        {
+            for (int j = 0; j < Columns; j++)
+            {
+                Charcondition(chars, j);
+            }
+        }
+
+        public void Charcondition(char[] chars, int j)
+        {
+            if (chars[j] != '*')
+                chars[j] = '0';
         }
 
         public void GenerateOutputField()
@@ -42,13 +52,20 @@ namespace MineSweeperKataLibrary
             for (int i = 0; i < Lines; i++)
             {
                 char[] chars = OutputGrid[i].ToCharArray();
-                for(int j = 0; j < Columns; j++)
-                {
-                    if (chars[j] == '*')
-                        UpdateSurroundingValues(i, j);
-                }
+                Generator(chars, i);
             }
         }
+
+        public void Generator(char[] chars, int i)
+        {
+            for (int j = 0; j < Columns; j++)
+            {
+                if (chars[j] == '*')
+                    UpdateSurroundingValues(i, j);
+            }
+        }
+
+
 
         private void UpdateSurroundingValues(int i, int j)
         {
@@ -70,6 +87,14 @@ namespace MineSweeperKataLibrary
             if (j + 1 < Columns)
                 jValidHigherIndex = true;
 
+
+            MultipleAdder(iValidLowerIndex, iValidHigherIndex, jValidLowerIndex, jValidHigherIndex, i, j);
+
+            DiagonalAdder(iValidLowerIndex, iValidHigherIndex, jValidLowerIndex, jValidHigherIndex, i, j);
+        }
+
+        public void MultipleAdder(bool iValidLowerIndex, bool iValidHigherIndex, bool jValidLowerIndex, bool jValidHigherIndex, int i, int j)
+        {
             if (iValidLowerIndex)
                 DotValuePlus1(i - 1, j);
 
@@ -82,6 +107,11 @@ namespace MineSweeperKataLibrary
             if (jValidHigherIndex)
                 DotValuePlus1(i, j + 1);
 
+
+        }
+
+        public void DiagonalAdder(bool iValidLowerIndex, bool iValidHigherIndex, bool jValidLowerIndex, bool jValidHigherIndex, int i, int j)
+        {
             if (iValidLowerIndex && jValidLowerIndex)
                 DotValuePlus1(i - 1, j - 1);
 
@@ -93,13 +123,12 @@ namespace MineSweeperKataLibrary
 
             if (iValidHigherIndex && jValidHigherIndex)
                 DotValuePlus1(i + 1, j + 1);
-
         }
 
         private void DotValuePlus1(int i, int j)
         {
             char[] chars = OutputGrid[i].ToCharArray();
-            if(chars[j] != '*')
+            if (chars[j] != '*')
             {
                 int value = Convert.ToInt32(chars[j]) - 48;
                 value++;
